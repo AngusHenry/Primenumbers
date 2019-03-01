@@ -18,16 +18,35 @@ public class EratosthenesJava {
      */
     public static void main(String[] args) {
         System.out.println ("hi");
-        boolean numbers[] = new boolean[1000];
+        boolean[] numbers = new boolean[1001];
+        int number = 1000;  
+        System.out.println ("hi");
         
-        for (int i = 0; i< numbers.length;){
-        if (i == 1){
-                 numbers[i]= true;
-           System.out.println (numbers[i]);       
+        for (int i = 1; i < number; i++){
+            numbers[i] = true;
         }
-        i++;
+              System.out.println ("hi");
+              
+      for (int p = 2; p*p <= number; p++){
+          if (numbers[p] == true){
+              for (int x = p*p; p <= number; x+=p){
+                    numbers[x] = false;
+                }
+            }
         }
+      int x = 0;
+      for (int i = 2; i<= number; i++){
+          if (x<= 10){
+              if (numbers[i] == true){
+                  System.out.print (i +", ");
+                  x+=1;
+              }
+          }
+          else if (numbers[i]== true && x > 10){
+             System.out.print ("\n");
+             System.out.print (i +", "); 
+          }
+      }
     }
     
 }
-
