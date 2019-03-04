@@ -17,20 +17,19 @@ public class EratosthenesJava {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println ("hi");
         boolean[] numbers = new boolean[1001];
         int number = 1000;  
-        System.out.println ("hi");
         
         for (int i = 1; i < number; i++){
             numbers[i] = true;
         }
-              System.out.println ("hi");
               
-      for (int p = 2; p*p <= number; p++){
+      for (int p = 2; p*p <= number; p++ ){
+          System.out.println ("hi" + p);
           if (numbers[p] == true){
               for (int x = p*p; p <= number; x+=p){
-                    numbers[x] = false;
+                  System.out.println ("hi" + x); 
+                  numbers[x] = false;
                 }
             }
         }
