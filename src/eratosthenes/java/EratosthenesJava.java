@@ -17,24 +17,26 @@ public class EratosthenesJava {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        boolean[] numbers = new boolean[1001];
+        boolean[] numbers = new boolean[1000];
         int number = 1000;  
         
-        for (int i = 1; i < number; i++){
+        for (int i = 1; i < numbers.length; i++){
             numbers[i] = true;
         }
               
-      for (int p = 2; p*p <= number; p++ ){
-          System.out.println ("hi" + p);
+      for (int p = 2; p*p <= numbers.length;){
           if (numbers[p] == true){
-              for (int x = p*p; p <= number; x+=p){
-                  System.out.println ("hi" + x); 
-                  numbers[x] = false;
+              for (int x = p*p; p <= numbers.length; x+=p){
+                 if (x < numbers.length){
+                     numbers[x] = false;
+                 } else {
+                     p++;
+                 }
                 }
             }
         }
       int x = 0;
-      for (int i = 2; i<= number; i++){
+      for (int i = 2; i< numbers.length; i++){
           if (x<= 10){
               if (numbers[i] == true){
                   System.out.print (i +", ");
@@ -44,6 +46,7 @@ public class EratosthenesJava {
           else if (numbers[i]== true && x > 10){
              System.out.print ("\n");
              System.out.print (i +", "); 
+             x = 0;
           }
       }
     }
