@@ -3,6 +3,7 @@
  *28/02/2019
  * EratosthenesJava.java
  * This program finds prime numbers
+ * Done with help from Nick
  */
 
 package eratosthenes.java;
